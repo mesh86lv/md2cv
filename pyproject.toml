@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "md2cv"
+dynamic = ["version"]
+description = "Typeset a specific structured-Markdown résumé shape into DOCX."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "Alex K." }]
+keywords = ["resume", "cv", "markdown", "docx", "python-docx"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Topic :: Text Processing :: Markup :: Markdown",
+]
+dependencies = ["python-docx>=1.1.0"]
+
+[project.optional-dependencies]
+dev = ["pytest"]
+
+[project.scripts]
+md2cv = "md2cv:main"
+
+[project.urls]
+Homepage = "https://github.com/mesh86lv/md2cv"
+Source = "https://github.com/mesh86lv/md2cv"
+Issues = "https://github.com/mesh86lv/md2cv/issues"
+
+[tool.setuptools]
+py-modules = ["md2cv"]
+
+[tool.setuptools.dynamic]
+version = { attr = "md2cv.__version__" }
